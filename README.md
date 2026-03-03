@@ -16,19 +16,19 @@ Sistem manajemen karyawan berbasis Laravel dengan fitur lengkap untuk mengelola 
 
 ## Teknologi yang Digunakan
 
-- **Backend**: Laravel 11
+- **Backend**: Laravel 12
 - **Frontend**: Bootstrap 5, jQuery, DataTables
 - **File Upload**: Dropzone.js (foto), input file standar (dokumen)
 - **Date Picker**: Date Range Picker
 - **Select**: Select2 dengan tema Bootstrap 5
 - **Build Tool**: Vite
+- **Database**: SQLite
 
 ## Persyaratan Sistem
 
 - PHP ^8.2
 - Composer
 - Node.js & npm
-- MySQL/MariaDB
 - Laravel Valet/XAMPP/WAMP (opsional)
 
 ## Instalasi
@@ -36,7 +36,7 @@ Sistem manajemen karyawan berbasis Laravel dengan fitur lengkap untuk mengelola 
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/username/employee-app.git
+git clone https://github.com/fitra90/biiscorp-employee-app.git
 cd employee-app
 ```
 
@@ -55,19 +55,7 @@ npm install
 ### 4. Konfigurasi Environment
 
 ```bash
-cp .env.example .env
 php artisan key:generate
-```
-
-Edit file `.env` dan sesuaikan pengaturan database:
-
-```env
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=employee_db
-DB_USERNAME=root
-DB_PASSWORD=
 ```
 
 ### 5. Setup Database
@@ -154,39 +142,3 @@ Tabel `employees`:
 - Format: PDF, DOC, DOCX
 - Maksimal: 1 file
 - Lokasi penyimpanan: `storage/app/public/documents`
-
-## Troubleshooting
-
-### File Upload Gagal
-- Pastikan direktori `storage/app/public` memiliki permission yang benar
-- Jalankan `php artisan storage:link` untuk membuat symlink
-- Cek konfigurasi `upload_max_filesize` di php.ini
-
-### DataTables Error
-- Pastikan CSRF token sudah benar
-- Cek console browser untuk error JavaScript
-- Pastikan API endpoint dapat diakses
-
-### Build Error
-- Hapus folder `node_modules` dan jalankan `npm install` ulang
-- Pastikan Node.js versi terbaru
-- Cek file `vite.config.js` untuk konfigurasi yang benar
-
-## License
-
-Proyek ini open source dan tersedia di bawah [MIT License](LICENSE).
-
-## Kontribusi
-
-Kontribusi sangat dipersilakan! Silakan buka issue atau pull request.
-
-## Support
-
-Jika mengalami masalah, silakan:
-1. Buka issue di GitHub
-2. Sertakan langkah reproduksi error
-3. Sertakan screenshot jika diperlukan
-
----
-
-**Catatan**: Pastikan untuk menjalankan `composer run dev` untuk menjalankan aplikasi ini.
